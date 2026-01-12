@@ -1,1 +1,1 @@
-# rabotadelaisaithoxtovati
+# разработка сайта для магазина хозтоваров
