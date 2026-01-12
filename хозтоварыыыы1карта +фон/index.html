@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хозтовары - магазин бытовых товаров</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Анимированные фоновые элементы -->
+    <div class="background-animation">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+        <div class="square square-1"></div>
+        <div class="square square-2"></div>
+    </div>
+
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-home"></i>
+                <span>Хозтовары</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active"><i class="fas fa-home"></i> Главная</a>
+                <a href="#catalog" class="nav-link"><i class="fas fa-list"></i> Каталог</a>
+                <a href="#delivery" class="nav-link"><i class="fas fa-truck"></i> Доставка</a>
+                <a href="#admin" class="nav-link admin-link"><i class="fas fa-cog"></i> Админ-панель</a>
+            </div>
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Главная страница -->
+    <section id="home" class="page active">
+        <div class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="store-name">ХОЗТОВАРЫ</h1>
+                <p class="slogan">Всё для дома — от инструментов до чистоты!</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Екатеринбург, ул. Мамина-Сибиряка, 58</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+7 (343) 123-45-67</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@hoztovary.ru</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Пн-Пт: 9:00-20:00, Сб-Вс: 10:00-18:00</span>
+                    </div>
+                </div>
+                <div class="location">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Геолокация</h3>
+                    <p>Мы находимся в центре Екатеринбурга, рядом с остановкой "Цирк"</p>
+                    <div class="map-placeholder">
+                        <div class="map-overlay">
+                            <p><i class="fas fa-map-pin"></i> Екатеринбург, пр-т Ленина, 24/8</p>
+                            <button class="map-btn" id="show-map-btn">
+                                <i class="fas fa-external-link-alt"></i> Показать на карте
+                            </button>
+                            <div class="map-links">
+                                <a href="https://yandex.ru/maps/54/yekaterinburg/?ll=60.597465%2C56.837814&mode=search&oid=1029556568&ol=biz&z=17"
+                                   target="_blank"
+                                   class="map-link">
+                                    <i class="fab fa-yandex"></i> Яндекс.Карты
+                                </a>
+                                <a href="https://www.google.com/maps/place/%D0%95%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B1%D1%83%D1%80%D0%B3,+%D0%BF%D1%80-%D1%82+%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0,+24%2F8/@56.837814,60.5952763,17z/data=!3m1!4b1!4m6!3m5!1s0x43c165e8dd12d75f:0x40243457294b150!8m2!3d56.837814!4d60.597465!16s%2Fg%2F11c2n45j9y?entry=ttu"
+                                   target="_blank"
+                                   class="map-link">
+                                    <i class="fab fa-google"></i> Google Maps
+                                </a>
+                                <a href="https://2gis.ru/yekaterinburg/search/%D0%95%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%BF%D1%80-%D1%82%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0%2C%2024%2F8/firm/70000001029325195/60.597465%2C56.837814?m=60.597465%2C56.837814%2F17"
+                                   target="_blank"
+                                   class="map-link">
+                                    <i class="fas fa-map"></i> 2ГИС
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Каталог -->
+    <section id="catalog" class="page">
+        <div class="container">
+            <h2 class="section-title">Каталог товаров</h2>
+            
+            <div class="catalog-container">
+                <!-- Фильтры -->
+                <div class="filters-sidebar">
+                    <div class="filter-group">
+                        <h3><i class="fas fa-filter"></i> Фильтры</h3>
+                        
+                        <div class="filter-section">
+                            <h4>Цена</h4>
+                            <div class="price-range">
+                                <input type="range" min="0" max="50000" value="0" class="price-slider" id="price-min">
+                                <input type="range" min="0" max="50000" value="50000" class="price-slider" id="price-max">
+                                <div class="price-inputs">
+                                    <input type="number" id="min-price" placeholder="0" min="0">
+                                    <span>—</span>
+                                    <input type="number" id="max-price" placeholder="50000" max="50000">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-section">
+                            <h4>Наличие</h4>
+                            <label class="checkbox">
+                                <input type="checkbox" id="in-stock" checked>
+                                <span>В наличии</span>
+                            </label>
+                        </div>
+                        
+                        <div class="filter-section">
+                            <h4>Бренды (Бытовая химия)</h4>
+                            <label class="checkbox">
+                                <input type="checkbox" class="brand-filter" value="Керхер">
+                                <span>Керхер</span>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" class="brand-filter" value="Мистер Пропер">
+                                <span>Мистер Пропер</span>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" class="brand-filter" value="Ваниш">
+                                <span>Ваниш</span>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" class="brand-filter" value="Миф">
+                                <span>Миф</span>
+                            </label>
+                        </div>
+                        
+                        <div class="filter-section">
+                            <h4>Бренды (Инструменты)</h4>
+                            <label class="checkbox">
+                                <input type="checkbox" class="brand-filter" value="Макита">
+                                <span>Макита</span>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" class="brand-filter" value="Бош">
+                                <span>Бош</span>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" class="brand-filter" value="Ермак">
+                                <span>Ермак</span>
+                            </label>
+                        </div>
+                        
+                        <div class="filter-section">
+                            <h4>Категории</h4>
+                            <select id="category-filter" class="select-filter">
+                                <option value="all">Все категории</option>
+                                <option value="Бытовая химия">Бытовая химия</option>
+                                <option value="Инструменты">Инструменты</option>
+                                <option value="Прочее">Прочее</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-section">
+                            <h4>Прочее</h4>
+                            <label class="checkbox">
+                                <input type="checkbox" class="other-filter" value="спички">
+                                <span>Спички</span>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" class="other-filter" value="зажигалка">
+                                <span>Бензиновые зажигалки</span>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" class="other-filter" value="хозинвентарь">
+                                <span>Хозяйственный инвентарь</span>
+                            </label>
+                        </div>
+                        
+                        <button id="reset-filters" class="reset-btn">
+                            <i class="fas fa-redo"></i> Сбросить фильтры
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Товары -->
+                <div class="products-grid">
+                    <div class="products-header">
+                        <div class="sort-options">
+                            <select id="sort-by" class="select-filter">
+                                <option value="default">Сортировка по умолчанию</option>
+                                <option value="price-asc">По возрастанию цены</option>
+                                <option value="price-desc">По убыванию цены</option>
+                                <option value="name">По названию</option>
+                            </select>
+                        </div>
+                        <div class="products-count">
+                            Найдено товаров: <span id="product-count">0</span>
+                        </div>
+                    </div>
+                    <div id="products-container" class="products-container">
+                        <!-- Товары будут загружены через JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Доставка -->
+    <section id="delivery" class="page">
+        <div class="container">
+            <h2 class="section-title">Доставка и оформление заказа</h2>
+            
+            <div class="delivery-container">
+                <div class="delivery-info">
+                    <div class="info-card">
+                        <i class="fas fa-shipping-fast"></i>
+                        <h3>Условия доставки</h3>
+                        <ul>
+                            <li>Бесплатная доставка при заказе от 3000 ₽</li>
+                            <li>Доставка по Екатеринбургу: 1-2 дня</li>
+                            <li>Самовывоз: сегодня</li>
+                            <li>Доставка в регионы: 3-7 дней</li>
+                        </ul>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-credit-card"></i>
+                        <h3>Способы оплаты</h3>
+                        <ul>
+                            <li>Наличными при получении</li>
+                            <li>Банковской картой онлайн</li>
+                            <li>Безналичный расчет для юр. лиц</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="order-form-container">
+                    <h3><i class="fas fa-shopping-cart"></i> Оформление заказа</h3>
+                    <form id="order-form" class="order-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first-name">Имя *</label>
+                                <input type="text" id="first-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Фамилия *</label>
+                                <input type="text" id="last-name" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="address">Адрес доставки *</label>
+                            <input type="text" id="address" placeholder="Город, улица, дом, квартира" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="delivery-date">Дата доставки *</label>
+                                <input type="date" id="delivery-date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="delivery-time">Время доставки *</label>
+                                <select id="delivery-time" required>
+                                    <option value="">Выберите время</option>
+                                    <option value="10:00-14:00">10:00 - 14:00</option>
+                                    <option value="14:00-18:00">14:00 - 18:00</option>
+                                    <option value="18:00-22:00">18:00 - 22:00</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Телефон *</label>
+                            <input type="tel" id="phone" placeholder="+7 (___) ___-__-__" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Способ оплаты *</label>
+                            <div class="payment-options">
+                                <label class="radio">
+                                    <input type="radio" name="payment" value="cash" checked>
+                                    <span>Наличными при получении</span>
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="payment" value="card">
+                                    <span>Банковской картой онлайн</span>
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="payment" value="invoice">
+                                    <span>Безналичный расчет</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="comments">Комментарий к заказу</label>
+                            <textarea id="comments" rows="3"></textarea>
+                        </div>
+                        
+                        <div class="cart-summary">
+                            <h4>Ваш заказ:</h4>
+                            <div id="order-items"></div>
+                            <div class="total-price">
+                                Итого: <span id="order-total">0</span> ₽
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="submit-order-btn">
+                            <i class="fas fa-check"></i> Оформить заказ
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Админ-панель -->
+    <section id="admin" class="page">
+        <div class="container">
+            <h2 class="section-title">Админ-панель</h2>
+            
+            <div class="admin-container">
+                <div class="admin-login" id="admin-login">
+                    <h3><i class="fas fa-lock"></i> Вход в админ-панель</h3>
+                    <div class="form-group">
+                        <label for="admin-username">Логин</label>
+                        <input type="text" id="admin-username">
+                    </div>
+                    <div class="form-group">
+                        <label for="admin-password">Пароль</label>
+                        <input type="password" id="admin-password">
+                    </div>
+                    <button id="login-btn" class="admin-btn">
+                        <i class="fas fa-sign-in-alt"></i> Войти
+                    </button>
+                    <p class="admin-hint">Подсказка: admin / admin123</p>
+                </div>
+                
+                <div class="admin-panel" id="admin-panel" style="display: none;">
+                    <div class="admin-header">
+                        <h3><i class="fas fa-tools"></i> Управление товарами</h3>
+                        <button id="logout-btn" class="admin-btn logout-btn">
+                            <i class="fas fa-sign-out-alt"></i> Выйти
+                        </button>
+                    </div>
+                    
+                    <div class="admin-actions">
+                        <button id="add-product-btn" class="admin-btn primary">
+                            <i class="fas fa-plus"></i> Добавить товар
+                        </button>
+                        <button id="export-products-btn" class="admin-btn">
+                            <i class="fas fa-file-export"></i> Экспорт данных
+                        </button>
+                    </div>
+                    
+                    <div class="product-form-container" id="product-form-container" style="display: none;">
+                        <h4><i class="fas fa-edit"></i> Форма товара</h4>
+                        <form id="product-form">
+                            <input type="hidden" id="product-id">
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="product-name">Название *</label>
+                                    <input type="text" id="product-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="product-price">Цена (₽) *</label>
+                                    <input type="number" id="product-price" min="0" step="0.01" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="product-description">Описание</label>
+                                <textarea id="product-description" rows="2"></textarea>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="product-category">Категория *</label>
+                                    <select id="product-category" required>
+                                        <option value="">Выберите категорию</option>
+                                        <option value="Бытовая химия">Бытовая химия</option>
+                                        <option value="Инструменты">Инструменты</option>
+                                        <option value="Прочее">Прочее</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="product-brand">Бренд</label>
+                                    <input type="text" id="product-brand" list="brands-list">
+                                    <datalist id="brands-list">
+                                        <option value="Керхер">
+                                        <option value="Мистер Пропер">
+                                        <option value="Ваниш">
+                                        <option value="Миф">
+                                        <option value="Макита">
+                                        <option value="Бош">
+                                        <option value="Ермак">
+                                    </datalist>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="product-stock">Количество на складе *</label>
+                                    <input type="number" id="product-stock" min="0" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="product-image">URL изображения</label>
+                                    <input type="text" id="product-image" placeholder="https://example.com/image.jpg">
+                                </div>
+                            </div>
+                            
+                            <div class="form-buttons">
+                                <button type="submit" class="admin-btn primary">
+                                    <i class="fas fa-save"></i> Сохранить
+                                </button>
+                                <button type="button" id="cancel-form-btn" class="admin-btn">
+                                    <i class="fas fa-times"></i> Отмена
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="products-list-admin">
+                        <h4><i class="fas fa-boxes"></i> Список товаров</h4>
+                        <div class="table-container">
+                            <table id="admin-products-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Название</th>
+                                        <th>Категория</th>
+                                        <th>Бренд</th>
+                                        <th>Цена</th>
+                                        <th>На складе</th>
+                                        <th>Действия</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-products-body">
+                                    <!-- Товары будут загружены через JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Уведомления -->
+    <div id="notification" class="notification">
+        <span id="notification-text"></span>
+    </div>
+
+    <!-- Модальное окно корзины -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-shopping-cart"></i> Корзина</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="cart-items"></div>
+                <div class="cart-total">
+                    Итого: <span id="cart-total-price">0</span> ₽
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn secondary close-modal">Продолжить покупки</button>
+                <button class="btn primary" id="go-to-delivery">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
